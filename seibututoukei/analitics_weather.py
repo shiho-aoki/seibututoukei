@@ -1,81 +1,139 @@
+#python default library
 import csv
+#python threed party library
 import japanize_matplotlib
-
 import pandas as pd
 import matplotlib.pyplot as plt
-
+#module made by me(shiho aoki)
 import moving_average as ma
 
-#Analitics Weather data
-#Tokyo
-titile = 'TOKYO'
+class PltMovingAveFigure:
+    """plot data function
+        datainfo must be following shape.
 
-data1990 = pd.read_csv('data/Tokyo_1990 - Tokyo1990.csv')
-temp_rolling1 = ma.MovingAverage(data1990['temp'])
-vap_pressure_rolling1 = ma.MovingAverage(data1990['vap_pressure'])
-humidity_rolling1 = ma.MovingAverage(data1990['humidity'])
+        datainfo = {"title":title, "x_name":x_name,"y_name":y_name, "label":lables}
+    """
+    def __init__(self, path:list, datainfo:dict, point:str):
+        self.path = path
+        self.datainfo = datainfo
+        if point == 'temp':
+            self.data_point = 'temp'
+        elif point == 'vap':
+            self.data_point = 'vap_pressure'
+        elif point == 'hum':
+            self.data_point = 'humidity'
+        elif point == 'atm':
+            self.data_point = 'atm_pressure'
+        elif point == 'tp_max':
+            self.data_point = 'temp_max'
+        elif point == 'tp_min':
+            self.data_point = 'temp_min'
+        elif point == 'weather':
+            self.data_point = 'weather_num'
+        else:
+            raise AttributeError
 
-data1995 = pd.read_csv('data/Tokyo1995.csv')
-temp_rolling1 = ma.MovingAverage(data1995['temp'])
-vap_pressure_rolling1 = ma.MovingAverage(data1995['vap_pressure'])
-humidity_rolling1 = ma.MovingAverage(data1995['humidity'])
+    def __make_moving_ave(self):
+        x_data = []
+        y_data = []
+        for data_path in self.path:
+            data = pd.read_csv(data_path)
+            rolling = ma.MovingAverage(data['temp'])
+            y = data['Date']
+            x_data.append(rolling)
+            y_data.append(y)
+        return y_data, x_data
 
-data2000 = pd.read_csv('data/Tokyo_2000 - Tokyo2000.csv')
-temp_rolling2 = ma.MovingAverage(data2000['temp'])
-vap_pressure_rolling2 = ma.MovingAverage(data2000['vap_pressure'])
-humidity_rolling2 = ma.MovingAverage(data2000['humidity'])
+    def plt_moving_ave(self):
+        y, x_axis = self.__make_moving_ave()
+        saving_path = "./analitics/MovingAve_Img"+str(self.datainfo['title'])+".png"
+        print(saving_path)
+        i = 0
+        title = self.datainfo['title']
+        y_axis = []
+        for y_ in y:
+            y_memb = range(0, len(y_))
+            y_axis.append(y_memb)
+        
+        plt.title(self.datainfo['title'])
+        plt.xlabel(self.datainfo['x_name'])
+        plt.ylabel(self.datainfo['y_name'])
 
-data2005 = pd.read_csv('data/Tokyo_2005.csv')
-temp_rolling2 = ma.MovingAverage(data2005['temp'])
-vap_pressure_rolling2 = ma.MovingAverage(data2005['vap_pressure'])
-humidity_rolling2 = ma.MovingAverage(data2005['humidity'])
+        for y, x in zip(y_axis, x_axis):
+            plt.plot(y, x, label=self.datainfo['label'][i])
+            i += 1
+        plt.legend(title='凡例', borderaxespad=0, loc='upper left', bbox_to_anchor=(1,1), fontsize=9, ncol=2)
+        plt.tight_layout()
+        plt.savefig(saving_path)
+        #plt.show()
 
-data2010 = pd.read_csv('data/Tokyo_2010 - Tokyo2010.csv')
-temp_rolling3 = ma.MovingAverage(data2010['temp'])
-vap_pressure_rolling3 = ma.MovingAverage(data2010['vap_pressure'])
-humidity_rolling3 = ma.MovingAverage(data2010['humidity'])
+##for analisis
+def make_y_name(point_num):
+    if point_num == 'temp':
+        point_y = "気温 (℃)"
+        return point_y
+    elif point_num == 'vap':
+        point_y = "水蒸気圧 (hPa)"
+        return point_y
+    elif point_num == 'hum':
+        point_y = "湿度 (%)"
+        return point_y
+    elif point_num == 'atm':
+        point_y = "大気圧 (hPa)"
+        return point_y
+    elif point_num == 'tp_max':
+        point_y = "最高気温　(℃)"
+        return point_y
+    elif point_num == 'tp_min':
+        point_y = "最低気温　(℃)"
+        return point_y
+    elif point_num == 'weather':
+        point_y = "天気概要"
+        return point_y
 
-y1 = data1900['Date']
-y2 = data2000['Date']
-y3 = data2010['Date']
-y_ = [y1, y2, y3]
-y_a = [range(0,len(y1)), range(0,len(y2)), range(0,len(y3))]
-x1 = [temp_rolling1, temp_rolling2, temp_rolling3]
-x2 = [vap_pressure_rolling1, vap_pressure_rolling2, vap_pressure_rolling3]
-x3 = [humidity_rolling1, humidity_rolling2, humidity_rolling3]
+def make_csv_path(base_path):
+    paths = []
+    years = ['1990','1995','2000','2005','2010']
+    for year in years:
+        path = base_path + year + '.csv'
+        paths.append(path)
+    return paths
 
-label_temp = ["1900 気温", "2000 気温", "2010 気温"]
-label_pressure = ["1900 気圧", "2000 気圧", "2010 気圧"]
-label_humidity = ["1900　湿度","2000 湿度","2010 湿度"]
+point = ['temp','vap','hum','atm','tp_max','tp_min','weather']
+#===TOKYO===========
+base_path = r'data\weather\Tokyo'
+paths = make_csv_path(base_path)
+##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
 
-with open ('data/ans/average_moving_'+titile+'w.csv', 'w') as f:
-    writer = csv.writer(f)
-    writer.writerows(x1)
-    writer.writerows(x2)
-    writer.writerows(x3)
-#temp
-i = 0
-for y,x in zip(y_a, x1):
-    plt.plot(y, x, label=label_temp[i])
-    i += 1
-plt.legend(title='凡例', borderaxespad=0, loc='upper left', bbox_to_anchor=(1,1), fontsize=9, ncol=2)
-plt.tight_layout()
-plt.show()
+MA_Tokyo = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo.plt_moving_ave()
 
-#presseur
-# i = 0
-# for y,x in zip(y_a, x2):
-#     plt.plot(y, x, label=label_pressure[i])
-#     i += 1
-# plt.legend(title='凡例', borderaxespad=0, loc='upper left', bbox_to_anchor=(1,1), fontsize=9, ncol=2)
-# plt.tight_layout()
-# plt.show()
+##vap
+##hum
+##atm
+##tp_max
+##tp_min
+##weather
+#===Sapporo=========
+##temp
+##vap
+##hum
+##atm
+##tp_max
+##tp_min
+##weather
+#===Osaka===========
 
-#humidity
-# i = 0
-# for y,x in zip(y_a, x3):
-#     plt.plot(y, x, label=label_humidity[i])
-#     i += 1
-# plt.legend(title='凡例', borderaxespad=0, loc='upper left', bbox_to_anchor=(1,1), fontsize=9, ncol=2)
-# plt.tight_layout()
-# plt.show()
+#===Naha============
+
+#===Nagoya==========
+
+#===Fukuokla=========
