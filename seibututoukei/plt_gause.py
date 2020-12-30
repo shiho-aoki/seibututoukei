@@ -7,10 +7,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class PLTGause:
-    def __init__(self, paths:list, point:str, datainfo:dict):
+    def __init__(self, paths:list, point:str, datainfo:dict, filetitle:str):
         self.paths = paths
         self.point = point
         self.datainfo = datainfo
+        self.filetitle = filetitle
 
     def caluc_main(self):
         data_set = []
@@ -34,7 +35,7 @@ class PLTGause:
             var.append(var_)
             mu.append(mu_)
         
-        ans_path = "./analitics/GS/"+self.datainfo['title']+'.csv'
+        ans_path = "./analitics/GS/"+ self.filetitle +self.point+'.csv'
         with open(ans_path, 'w') as f:
             writer = csv.writer(f)
             writer.writerows(var)

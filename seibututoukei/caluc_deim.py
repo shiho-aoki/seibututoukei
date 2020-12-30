@@ -5,7 +5,7 @@ rootname = r"./analitics/GS/csv"
 files = os.listdir(rootname)
 
 col_name = [i for i in range(1, 367)]
-save_base_path = r'./analitics/GS/要約統計量/'
+save_base_path = r'./analitics/GS/SummaryStatistics/'
 for filename in files:
     csv_path = os.path.join(rootname, filename)
     data = pd.read_csv(csv_path, names=col_name)

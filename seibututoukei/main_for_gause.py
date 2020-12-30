@@ -3,6 +3,7 @@ import plt_gause as plg
 
 #===TOKYO==================
 base_path = 'data\weather\Tokyo'
+filename = 'TOKYO'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
 ##temp
@@ -17,7 +18,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 
 ##vap
@@ -33,7 +34,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 
 ##hum
@@ -49,7 +50,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 ##atm
 points = 'atm'
@@ -64,7 +65,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -79,7 +80,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -94,7 +95,7 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 ##weather
 points = 'weather'
@@ -109,13 +110,14 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO)
+GA_TOKYO = plg.PLTGause(paths, point, datainfo_TOKYO, filename)
 GA_TOKYO.plt_main()
 
 #===Sappro===================
 base_path = 'data\weather\Sapporo'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
+filename = 'SAPPORO'
 ##temp
 point = 'temp'
 name = pltma.make_y_name(point)
@@ -128,7 +130,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##vap
 points = 'vap'
@@ -143,7 +145,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##hum
 points = 'hum'
@@ -158,7 +160,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##atm
 points = 'atm'
@@ -173,7 +175,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -188,7 +190,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -203,7 +205,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##weather
 points = 'weather'
@@ -218,14 +220,14 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 
 #===Osaka=========================
 base_path = 'data\weather\Osaka'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
-
+filename = 'OSAKA'
 ##temp
 point = 'temp'
 name = pltma.make_y_name(point)
@@ -238,7 +240,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##vap
 points = 'vap'
@@ -253,7 +255,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##hum
 points = 'hum'
@@ -268,7 +270,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##atm
 points = 'atm'
@@ -283,7 +285,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -298,7 +300,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -313,7 +315,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##weather
 points = 'weather'
@@ -327,13 +329,14 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 
 #===Naha==========================
 base_path = 'data\weather\Okinawa'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
+filename = 'OKINAWA'
 ##temp
 point = 'temp'
 name = pltma.make_y_name(point)
@@ -346,7 +349,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##vap
 points = 'vap'
@@ -361,7 +364,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##hum
 points = 'hum'
@@ -376,7 +379,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##atm
 points = 'atm'
@@ -391,7 +394,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -406,7 +409,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -421,7 +424,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##weather
 points = 'weather'
@@ -436,13 +439,13 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 #===Nagano=========================
 base_path = r'data\weather\agano'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
-
+filename='MATUMOTO'
 ##temp
 point = 'temp'
 name = pltma.make_y_name(point)
@@ -455,7 +458,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##vap
 points = 'vap'
@@ -470,7 +473,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##hum
 points = 'hum'
@@ -485,7 +488,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##atm
 points = 'atm'
@@ -500,7 +503,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -515,7 +518,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -530,7 +533,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##weather
 points = 'weather'
@@ -545,13 +548,14 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 
 #===Fukuoka========================
 base_path = 'data\weather\Fukuoka'
 makepath = pltma.make_csv_path(base_path)
 paths = makepath.main()
+filename='FUKUOKA'
 ##temp
 point = 'temp'
 name = pltma.make_y_name(point)
@@ -564,7 +568,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##vap
 points = 'vap'
@@ -578,7 +582,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##hum
 points = 'hum'
@@ -592,7 +596,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##atm
 points = 'atm'
@@ -606,7 +610,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmax
 points = 'tp_max'
@@ -620,7 +624,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##tpmin
 points = 'tp_min'
@@ -634,7 +638,7 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
 ##weather
 points = 'weather'
@@ -648,5 +652,5 @@ datainfo = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-GA = plg.PLTGause(paths, point, datainfo)
+GA = plg.PLTGause(paths, point, datainfo,filename)
 GA.plt_main()
