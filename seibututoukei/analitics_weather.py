@@ -38,7 +38,7 @@ class PltMovingAveFigure:
         y_data = []
         for data_path in self.path:
             data = pd.read_csv(data_path)
-            rolling = ma.MovingAverage(data['temp'])
+            rolling = ma.MovingAverage(data[self.data_point])
             y = data['Date']
             x_data.append(rolling)
             y_data.append(y)
@@ -113,27 +113,555 @@ datainfo_TOKYO = {
     "label": ["1990年","1995年","2000年","2005年","2010年"]
     }
 
-MA_Tokyo = PltMovingAveFigure(paths, datainfo_TOKYO, point)
-MA_Tokyo.plt_moving_ave()
+MA_Tokyo_t = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_t.plt_moving_ave()
 
 ##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_v = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_v.plt_moving_ave()
+
 ##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_h = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_h.plt_moving_ave()
+
 ##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_a = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_a.plt_moving_ave()
+
 ##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_tma = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_tma.plt_moving_ave()
+
 ##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_tmi = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_tmi.plt_moving_ave()
+
 ##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo_TOKYO = {
+    "title": "東京都" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Tokyo_w = PltMovingAveFigure(paths, datainfo_TOKYO, point)
+MA_Tokyo_w.plt_moving_ave()
+
+
 #===Sapporo=========
+base_path = r'data\weather\Sapporo'
+paths = make_csv_path(base_path)
 ##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_t = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_t.plt_moving_ave()
+
 ##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_v = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_v.plt_moving_ave()
+
 ##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_h = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_h.plt_moving_ave()
+
 ##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_a = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_a.plt_moving_ave()
+
 ##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_tma = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_tma.plt_moving_ave()
+
 ##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_tmi = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_tmi.plt_moving_ave()
+
 ##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "札幌市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Sapporo_w = PltMovingAveFigure(paths, datainfo, point)
+MA_Sapporo_w.plt_moving_ave()
+
 #===Osaka===========
+base_path = r'data\weather\Osaka'
+paths = make_csv_path(base_path)
+##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_t = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_t.plt_moving_ave()
+
+##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_v = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_v.plt_moving_ave()
+
+##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_h = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_h.plt_moving_ave()
+
+##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_a = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_a.plt_moving_ave()
+
+##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_tma = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_tma.plt_moving_ave()
+
+##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_tmi = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_tmi.plt_moving_ave()
+
+##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "大阪市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Osaka_w = PltMovingAveFigure(paths, datainfo, point)
+MA_Osaka_w.plt_moving_ave()
 
 #===Naha============
+base_path = r'data\weather\Okinawa'
+paths = make_csv_path(base_path)
+##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
 
-#===Nagoya==========
+MA_Okinawa_t = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_t.plt_moving_ave()
 
-#===Fukuokla=========
+##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_v = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_v.plt_moving_ave()
+
+##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_h = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_h.plt_moving_ave()
+
+##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_a = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_a.plt_moving_ave()
+
+##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_tma = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_tma.plt_moving_ave()
+
+##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_tmi = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_tmi.plt_moving_ave()
+
+##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "那覇市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Okinawa_w = PltMovingAveFigure(paths, datainfo, point)
+MA_Okinawa_w.plt_moving_ave()
+
+
+#===Nagano==========
+base_path = r'data\weather\agano'
+paths = make_csv_path(base_path)
+##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_t = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_t.plt_moving_ave()
+
+##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_v = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_v.plt_moving_ave()
+
+##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_h = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_h.plt_moving_ave()
+
+##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_a = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_a.plt_moving_ave()
+
+##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_tma = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_tma.plt_moving_ave()
+
+##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_tmi = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_tmi.plt_moving_ave()
+
+##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "長野市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Nagano_w = PltMovingAveFigure(paths, datainfo, point)
+MA_Nagano_w.plt_moving_ave()
+
+
+#===Fukuoka=========
+base_path = r'data\weather\Fukuoka'
+paths = make_csv_path(base_path)
+##temp
+point = 'temp'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_t = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_t.plt_moving_ave()
+
+##vap
+point = 'vap'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_v = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_v.plt_moving_ave()
+
+##hum
+point = 'hum'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_h = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_h.plt_moving_ave()
+##atm
+point = 'atm'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_a = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_a.plt_moving_ave()
+
+##tp_max
+point = 'tp_max'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_tma = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_tma.plt_moving_ave()
+
+##tp_min
+point = 'tp_min'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_tmi = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_tmi.plt_moving_ave()
+
+##weather
+point = 'weather'
+point_y = make_y_name(point)
+datainfo = {
+    "title": "福岡市" + str(point_y) + "移動平均足", 
+    "x_name": "時間（day）",
+    "y_name": str(point_y), 
+    "label": ["1990年","1995年","2000年","2005年","2010年"]
+    }
+
+MA_Fukuoka_w = PltMovingAveFigure(paths, datainfo, point)
+MA_Fukuoka_w.plt_moving_ave()
