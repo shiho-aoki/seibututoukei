@@ -6,6 +6,7 @@ files = os.listdir(rootname)
 
 col_name = [i for i in range(1, 367)]
 save_base_path = r'./analitics/GS/SummaryStatistics/'
+dicsribes = pd.DataFrame()
 for filename in files:
     csv_path = os.path.join(rootname, filename)
     data = pd.read_csv(csv_path, names=col_name)
@@ -27,5 +28,6 @@ for filename in files:
         'ave_ave': ave_ave,
         'ave_var': ave_var
     }, axis=1)
+    dicsribes = dicsribes.append(discribe)
 
-    discribe.to_csv(save_base_path+filename)
+dicsribes.to_csv(os.path.join(save_base_path,'ALL_DISCRIBS.csv'))

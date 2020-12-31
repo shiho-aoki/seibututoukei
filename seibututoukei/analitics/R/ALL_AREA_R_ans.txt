@@ -1,0 +1,31 @@
+> anova(res)
+Analysis of Variance Table
+
+Response: Rate
+           Df Sum Sq Mean Sq F value Pr(>F)
+var_ave     1   18.5 18.4942  0.6029 0.4384
+var_var     1    5.4  5.4027  0.1761 0.6752
+ave_ave     1    0.0  0.0438  0.0014 0.9699
+ave_var     1   10.2 10.1635  0.3314 0.5655
+Residuals 200 6134.6 30.6729               
+> summary(res)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.9894 -2.9517 -2.1951  0.9939 21.4246 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  9.796e+00  7.571e+01   0.129    0.897
+var_ave      5.445e+01  4.859e+02   0.112    0.911
+var_var     -6.113e+02  1.904e+03  -0.321    0.749
+ave_ave      5.116e-04  1.491e-03   0.343    0.732
+ave_var     -1.138e-03  1.976e-03  -0.576    0.566
+
+Residual standard error: 5.538 on 200 degrees of freedom
+  (5 observations deleted due to missingness)
+Multiple R-squared:  0.005529,	Adjusted R-squared:  -0.01436 
+F-statistic: 0.278 on 4 and 200 DF,  p-value: 0.892
