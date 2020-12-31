@@ -1,0 +1,134 @@
+ res_va <- lm(Rate~var_ave,data)
+> autoplot(res_va,smooth.colour=NA)
+Warning messages:
+1: Removed 210 row(s) containing missing values (geom_path). 
+2: Removed 210 row(s) containing missing values (geom_path). 
+3: Removed 210 row(s) containing missing values (geom_path). 
+> anova(res_va)
+Analysis of Variance Table
+
+Response: Rate
+           Df Sum Sq Mean Sq F value Pr(>F)
+var_ave     1   25.7  25.664  0.8651 0.3534
+Residuals 208 6170.7  29.667               
+> summary(res_va)
+
+Call:
+lm(formula = Rate ~ var_ave, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.9373 -2.9390 -2.1384  0.8989 21.4933 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)    41.41      29.10   1.423    0.156
+var_ave      -142.85     153.59  -0.930    0.353
+
+Residual standard error: 5.447 on 208 degrees of freedom
+Multiple R-squared:  0.004142,	Adjusted R-squared:  -0.000646 
+F-statistic: 0.8651 on 1 and 208 DF,  p-value: 0.3534
+
+> 
+> res_vv <- lm(Rate~var_var,data)
+> autoplot(res_vv,smooth.colour=NA)
+Warning messages:
+1: Removed 210 row(s) containing missing values (geom_path). 
+2: Removed 210 row(s) containing missing values (geom_path). 
+3: Removed 210 row(s) containing missing values (geom_path). 
+> anova(res_vv)
+Analysis of Variance Table
+
+Response: Rate
+           Df Sum Sq Mean Sq F value Pr(>F)
+var_var     1   28.9  28.934  0.9758 0.3244
+Residuals 208 6167.4  29.651               
+> summary(res_vv)
+
+Call:
+lm(formula = Rate ~ var_var, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.9222 -2.9384 -2.1628  0.9641 21.5410 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   19.871      5.612   3.541 0.000492 ***
+var_var     -594.728    602.047  -0.988 0.324377    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.445 on 208 degrees of freedom
+Multiple R-squared:  0.00467,	Adjusted R-squared:  -0.0001156 
+F-statistic: 0.9758 on 1 and 208 DF,  p-value: 0.3244
+
+> 
+> res_av <- lm(Rate~ave_var,data)
+> autoplot(res_av,smooth.colour=NA)
+Warning messages:
+1: Removed 205 row(s) containing missing values (geom_path). 
+2: Removed 205 row(s) containing missing values (geom_path). 
+3: Removed 205 row(s) containing missing values (geom_path). 
+> anova(res_av)
+Analysis of Variance Table
+
+Response: Rate
+           Df Sum Sq Mean Sq F value Pr(>F)
+ave_var     1   13.8  13.785  0.4547 0.5009
+Residuals 203 6154.9  30.320               
+> summary(res_av)
+
+Call:
+lm(formula = Rate ~ ave_var, data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.887 -2.890 -2.235  1.072 21.243 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 14.4927634  0.4238115  34.196   <2e-16 ***
+ave_var     -0.0009782  0.0014508  -0.674    0.501    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.506 on 203 degrees of freedom
+  (5 observations deleted due to missingness)
+Multiple R-squared:  0.002235,	Adjusted R-squared:  -0.00268 
+F-statistic: 0.4547 on 1 and 203 DF,  p-value: 0.5009
+
+> 
+> res_aa <- lm(Rate~ave_ave,data)
+> autoplot(res_aa,smooth.colour=NA)
+Warning messages:
+1: Removed 205 row(s) containing missing values (geom_path). 
+2: Removed 205 row(s) containing missing values (geom_path). 
+3: Removed 205 row(s) containing missing values (geom_path). 
+> anova(res_aa)
+Analysis of Variance Table
+
+Response: Rate
+           Df Sum Sq Mean Sq F value Pr(>F)
+ave_ave     1    0.0  0.0083   3e-04 0.9869
+Residuals 203 6168.7 30.3876               
+> summary(res_aa)
+
+Call:
+lm(formula = Rate ~ ave_ave, data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.776 -2.875 -2.357  1.125 21.143 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.438e+01  4.268e-01  33.681   <2e-16 ***
+ave_ave     -1.864e-05  1.130e-03  -0.016    0.987    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.512 on 203 degrees of freedom
+  (5 observations deleted due to missingness)
+Multiple R-squared:  1.341e-06,	Adjusted R-squared:  -0.004925 
+F-statistic: 0.0002721 on 1 and 203 DF,  p-value: 0.9869
