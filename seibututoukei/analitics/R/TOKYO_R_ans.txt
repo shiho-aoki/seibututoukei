@@ -1,0 +1,285 @@
+> atm <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_atm)
+> autoplot(atm,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(atm)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 4.3996  4.3996               
+var_var    1 0.8154  0.8154               
+ave_ave    1 8.9520  8.9520               
+ave_var    1 0.5250  0.5250               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(atm) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(atm)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_atm)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept) -1.201e+03         NA      NA       NA
+var_ave      8.429e+02         NA      NA       NA
+var_var      4.577e+03         NA      NA       NA
+ave_ave      1.020e+00         NA      NA       NA
+ave_var     -4.585e-03         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> hum <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_hum)
+> autoplot(hum,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(hum)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 1.4747  1.4747               
+var_var    1 2.3758  2.3758               
+ave_ave    1 3.2262  3.2262               
+ave_var    1 7.6153  7.6153               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(hum) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(hum)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_hum)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept) -1.034e+04         NA      NA       NA
+var_ave      6.636e+04         NA      NA       NA
+var_var     -2.255e+05         NA      NA       NA
+ave_ave     -3.430e-01         NA      NA       NA
+ave_var     -5.054e-01         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> tma <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_tma)
+> autoplot(tma,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(tma)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 9.2982  9.2982               
+var_var    1 4.5972  4.5972               
+ave_ave    1 0.2162  0.2162               
+ave_var    1 0.5804  0.5804               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(tma) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(tma)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_tma)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  -369.4542         NA      NA       NA
+var_ave      1382.8111         NA      NA       NA
+var_var     13471.1634         NA      NA       NA
+ave_ave        -0.5531         NA      NA       NA
+ave_var         0.1378         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> tmi <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_tmi)
+> autoplot(tmi,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(tmi)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 7.2154  7.2154               
+var_var    1 2.9209  2.9209               
+ave_ave    1 1.6515  1.6515               
+ave_var    1 2.9043  2.9043               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(tmi) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(tmi)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_tmi)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)   -59.0793         NA      NA       NA
+var_ave      1370.8520         NA      NA       NA
+var_var     -5532.3565         NA      NA       NA
+ave_ave        -5.6883         NA      NA       NA
+ave_var        -0.4024         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> tep <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_tep)
+> autoplot(tep,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(tep)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 5.2843  5.2843               
+var_var    1 0.4389  0.4389               
+ave_ave    1 0.4619  0.4619               
+ave_var    1 8.5069  8.5069               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(tep) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(tep)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_tep)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  -217.934         NA      NA       NA
+var_ave      2375.472         NA      NA       NA
+var_var     -6673.366         NA      NA       NA
+ave_ave        -6.038         NA      NA       NA
+ave_var        -1.244         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> vap <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_vap)
+> autoplot(vap,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(vap)
+Analysis of Variance Table
+
+Response: Rate
+          Df  Sum Sq Mean Sq F value Pr(>F)
+var_ave    1  0.3075  0.3075               
+var_var    1  1.9657  1.9657               
+ave_ave    1  0.6655  0.6655               
+ave_var    1 11.7533 11.7533               
+Residuals  0  0.0000                       
+Warning message:
+In anova.lm(vap) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(vap)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_vap)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)   8146.082         NA      NA       NA
+var_ave     -52390.482         NA      NA       NA
+var_var     195620.578         NA      NA       NA
+ave_ave         10.722         NA      NA       NA
+ave_var         -2.793         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
+
+> 
+> wth <- lm(Rate~var_ave+var_var+ave_ave+ave_var, data_wth)
+> autoplot(wth,smooth.colour=NA)
+Error in qqnorm.default(plot.data$.wstdresid, ylim = ylim, plot.it = FALSE) : 
+  y is empty or has only NAs
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> anova(wth)
+Analysis of Variance Table
+
+Response: Rate
+          Df Sum Sq Mean Sq F value Pr(>F)
+var_ave    1 0.0516  0.0516               
+var_var    1 6.5937  6.5937               
+ave_ave    1 7.9968  7.9968               
+ave_var    1 0.0499  0.0499               
+Residuals  0 0.0000                       
+Warning message:
+In anova.lm(wth) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
+> summary(wth)
+
+Call:
+lm(formula = Rate ~ var_ave + var_var + ave_ave + ave_var, data = data_wth)
+
+Residuals:
+ALL 5 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)   336.1427         NA      NA       NA
+var_ave     -2426.4768         NA      NA       NA
+var_var     13455.0896         NA      NA       NA
+ave_ave         4.5519         NA      NA       NA
+ave_var         0.2244         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 4 and 0 DF,  p-value: NA
