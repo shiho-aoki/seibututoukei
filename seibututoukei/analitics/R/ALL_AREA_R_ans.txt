@@ -29,3 +29,100 @@ Residual standard error: 5.538 on 200 degrees of freedom
   (5 observations deleted due to missingness)
 Multiple R-squared:  0.005529,	Adjusted R-squared:  -0.01436 
 F-statistic: 0.278 on 4 and 200 DF,  p-value: 0.892
+
+autoplot(res2,smooth.colour=NA)
+Warning messages:
+1: Removed 205 row(s) containing missing values (geom_path). 
+2: Removed 205 row(s) containing missing values (geom_path). 
+3: Removed 205 row(s) containing missing values (geom_path). 
+> anova(res2)
+Analysis of Variance Table
+
+Response: Rate
+                                 Df Sum Sq Mean Sq F value
+var_ave                           1   18.5  18.494  0.6033
+var_var                           1    5.4   5.403  0.1762
+ave_ave                           1    0.0   0.044  0.0014
+ave_var                           1   10.2  10.164  0.3316
+var_ave:var_var                   1   50.3  50.335  1.6420
+var_ave:ave_ave                   1   41.6  41.619  1.3577
+var_var:ave_ave                   1    2.4   2.439  0.0796
+var_ave:ave_var                   1   20.3  20.282  0.6616
+var_var:ave_var                   1  142.8 142.754  4.6570
+ave_ave:ave_var                   1    2.7   2.706  0.0883
+var_ave:var_var:ave_ave           1    1.2   1.231  0.0402
+var_ave:var_var:ave_var           1    1.1   1.102  0.0360
+var_ave:ave_ave:ave_var           1    5.5   5.505  0.1796
+var_var:ave_ave:ave_var           1    5.4   5.440  0.1775
+var_ave:var_var:ave_ave:ave_var   1   67.6  67.594  2.2051
+Residuals                       189 5793.6  30.654        
+                                 Pr(>F)  
+var_ave                         0.43828  
+var_var                         0.67510  
+ave_ave                         0.96988  
+ave_var                         0.56543  
+var_ave:var_var                 0.20161  
+var_ave:ave_ave                 0.24541  
+var_var:ave_ave                 0.77819  
+var_ave:ave_var                 0.41701  
+var_var:ave_var                 0.03219 *
+ave_ave:ave_var                 0.76669  
+var_ave:var_var:ave_ave         0.84136  
+var_ave:var_var:ave_var         0.84982  
+var_ave:ave_ave:ave_var         0.67221  
+var_var:ave_ave:ave_var         0.67404  
+var_ave:var_var:ave_ave:ave_var 0.13922  
+Residuals                                
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> summary(res2)
+
+Call:
+lm(formula = Rate ~ var_ave * var_var * ave_ave * ave_var, data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.005 -3.119 -1.875  1.304 20.942 
+
+Coefficients:
+                                  Estimate Std. Error t value
+(Intercept)                      3.224e+02  5.099e+02   0.632
+var_ave                         -1.572e+03  2.482e+03  -0.633
+var_var                         -2.768e+04  7.176e+04  -0.386
+ave_ave                          2.518e+00  7.727e+00   0.326
+ave_var                         -1.811e+01  1.030e+01  -1.759
+var_ave:var_var                  1.405e+05  3.456e+05   0.407
+var_ave:ave_ave                 -1.457e+01  3.961e+01  -0.368
+var_var:ave_ave                 -1.513e+02  9.618e+02  -0.157
+var_ave:ave_var                  9.303e+01  5.192e+01   1.792
+var_var:ave_var                  1.867e+03  1.278e+03   1.461
+ave_ave:ave_var                  1.680e-02  1.064e-02   1.579
+var_ave:var_var:ave_ave          9.357e+02  4.921e+03   0.190
+var_ave:var_var:ave_var         -9.579e+03  6.328e+03  -1.514
+var_ave:ave_ave:ave_var         -8.435e-02  5.373e-02  -1.570
+var_var:ave_ave:ave_var         -1.907e+00  1.308e+00  -1.459
+var_ave:var_var:ave_ave:ave_var  9.602e+00  6.466e+00   1.485
+                                Pr(>|t|)  
+(Intercept)                       0.5279  
+var_ave                           0.5274  
+var_var                           0.7001  
+ave_ave                           0.7449  
+ave_var                           0.0802 .
+var_ave:var_var                   0.6848  
+var_ave:ave_ave                   0.7134  
+var_var:ave_ave                   0.8752  
+var_ave:ave_var                   0.0748 .
+var_var:ave_var                   0.1457  
+ave_ave:ave_var                   0.1160  
+var_ave:var_var:ave_ave           0.8494  
+var_ave:var_var:ave_var           0.1317  
+var_ave:ave_ave:ave_var           0.1181  
+var_var:ave_ave:ave_var           0.1463  
+var_ave:var_var:ave_ave:ave_var   0.1392  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.537 on 189 degrees of freedom
+  (5 observations deleted due to missingness)
+Multiple R-squared:  0.06081,	Adjusted R-squared:  -0.01373 
+F-statistic: 0.8158 on 15 and 189 DF,  p-value: 0.6593

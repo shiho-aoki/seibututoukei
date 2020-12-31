@@ -27,3 +27,8 @@ res <- lm(Rate~var_ave+var_var+ave_ave+ave_var,data)
 autoplot(res,smooth.colour=NA)
 anova(res)
 summary(res)
+
+res2 <- lm(Rate~var_ave*var_var*ave_ave*ave_var,data)
+autoplot(res2,smooth.colour=NA)
+anova(res2)
+summary(res2)
